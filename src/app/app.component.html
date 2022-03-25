@@ -1,0 +1,24 @@
+<div *ngIf="!endGameFlag">
+    <div class="row">
+        <div class="col-10">
+            <div id="word">
+                <app-word
+                (victoryOutput)="onSetGameOverFlag($event)">
+                </app-word>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="letters">
+        <app-letters
+        (letterOutput)="onLetterToPass($event)">
+        </app-letters>
+    </div>
+    <hr>
+</div>
+
+<app-restart
+[victoryFlag]="victoryFlag"
+[endGameFlag]="endGameFlag">    
+</app-restart>

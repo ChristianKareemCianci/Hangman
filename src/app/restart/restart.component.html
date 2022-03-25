@@ -1,0 +1,9 @@
+<div *ngIf="endGameFlag">
+    <h1 *ngIf="victoryFlag else defeat">YOU WON, BUT IT WAS JUST LUCK</h1>
+    <ng-template #defeat><h1>YOU LOST, LOSER!</h1></ng-template>
+    <button type="button"
+    class="btn btn-danger"
+    (click)="onRestartGame()"
+    >
+    Restart</button>
+</div>

@@ -1,0 +1,9 @@
+div {
+    width: 500px;
+    color: black;
+    position: absolute;
+    left: 33%;
+    top: 37%;
+    border: 5px solid white;
+    text-align: center;
+}

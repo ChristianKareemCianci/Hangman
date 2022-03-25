@@ -1,0 +1,7 @@
+td {
+    width: 50px;
+}
+
+#lives {
+    position: absolute; bottom: 15px; left: 15px;
+}

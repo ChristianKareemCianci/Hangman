@@ -1,0 +1,8 @@
+<table>
+    <td *ngFor="let letter of lettersArray">
+        <app-single-letter
+        [letterValue]="letter"
+        (letterOutput)="onPassLetterSelected($event)">
+        </app-single-letter>
+    </td>
+</table>
