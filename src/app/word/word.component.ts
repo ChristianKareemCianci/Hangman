@@ -15,7 +15,8 @@ export class WordComponent implements OnInit {
   chosenWordDisplay: string[] = [];
   indexVictory: number = 2;
   comparisonIndex: number = 2;
-  indexLives: number = 5;
+  indexLives: number = 6;
+
 
   constructor(public wordAndLetter: WordAndLetter, public restartGame: RestartGame) {
     this.restartGame.gameOverOutput.subscribe(() => this.onCleanTable());
@@ -48,20 +49,20 @@ export class WordComponent implements OnInit {
         }
       }
     }
+    //Reduce lives
     if(this.comparisonIndex === this.indexVictory) {
       this.indexLives--;
+      this.wordAndLetter.loseLive();
     }
+    //Condition to Victory
     if(this.indexVictory === this.chosenWord.length ) {
       this.victoryOutput.emit(true);
     }
+    //Condition to Defeat
     else if(this.indexLives === 0) {
       this.victoryOutput.emit(false);
     }
     this.comparisonIndex = this.indexVictory;
-    // if(this.chosenWord === this.chosenWordDisplay){
-    //   console.log('Partita vinta')
-    //   this.victoryOutput.emit(true);
-    // }
   }
 
   onCleanTable() {

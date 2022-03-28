@@ -1,0 +1,9 @@
+#Gallows {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 400px;
+}

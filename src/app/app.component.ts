@@ -14,6 +14,7 @@ export class AppComponent {
   letterToPass: string;
   victoryFlag: boolean;
   endGameFlag: boolean = false;
+  indexImage: number = 1;
 
   constructor(public restartGame: RestartGame) {
     this.restartGame.gameOverOutput.subscribe(() => this.onRestartGame());
@@ -24,7 +25,7 @@ export class AppComponent {
   }
 
   onDisplayHangman() {
-
+    this.indexImage++;
   }
 
   onSetGameOverFlag(victoryFlagInput: boolean) {

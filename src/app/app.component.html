@@ -1,15 +1,21 @@
+<!-- Gallows  -->
+<div *ngIf="!endGameFlag">
+    <app-gallows></app-gallows>
+</div>
+<!-- Word  -->
 <div *ngIf="!endGameFlag">
     <div class="row">
         <div class="col-10">
             <div id="word">
                 <app-word
-                (victoryOutput)="onSetGameOverFlag($event)">
+                (victoryOutput)="onSetGameOverFlag($event)"
+                (lostLivesOutput)="onDisplayHangman()">
                 </app-word>
             </div>
         </div>
     </div>
-    <br>
-
+    <hr>
+    <!-- Letters  -->
     <div id="letters">
         <app-letters
         (letterOutput)="onLetterToPass($event)">
